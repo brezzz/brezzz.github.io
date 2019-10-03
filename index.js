@@ -19,23 +19,23 @@ function callQuestions () {
             <form class='quizQuestions' >
                 <fieldset>
                     <label class='answerContainer'>
-                        <input type="radio" name="option"  value='${Quiz[currentQuestion].multiple_choice[0]}' required></input>
-                        <span>${Quiz[currentQuestion].multiple_choice[0]}</span>
+                       <span class="checkmark"> <input type="radio" name="option" value='${Quiz[currentQuestion].multiple_choice[0]}' required></input></span>
+                        ${Quiz[currentQuestion].multiple_choice[0]}
                     </label>
 
                     <label class='answerContainer'>
-                        <input type="radio" name="option"  value='${Quiz[currentQuestion].multiple_choice[1]}' required></input>
-                        <span>${Quiz[currentQuestion].multiple_choice[1]}</span>
+                       <span class="checkmark"> <input type="radio" name="option" value='${Quiz[currentQuestion].multiple_choice[1]}' required></input></span>
+                        ${Quiz[currentQuestion].multiple_choice[1]}
                     </label>
 
                     <label class='answerContainer'>
-                        <input type="radio" name="option" value='${Quiz[currentQuestion].multiple_choice[2]}' required></input>
-                        <span>${Quiz[currentQuestion].multiple_choice[2]}</span>
+                       <span class="checkmark"> <input type="radio" name="option" value='${Quiz[currentQuestion].multiple_choice[2]}' required></input></span>
+                        ${Quiz[currentQuestion].multiple_choice[2]}
                     </label>
 
                     <label class='answerContainer'>
-                        <input type="radio" name="option" value='${Quiz[currentQuestion].multiple_choice[3]}' required></input>
-                        <span>${Quiz[currentQuestion].multiple_choice[3]}</span>
+                       <span class="checkmark"> <input type="radio" name="option" value='${Quiz[currentQuestion].multiple_choice[3]}' required></input></span>
+                        ${Quiz[currentQuestion].multiple_choice[3]}
                     </label>
                 </fieldset>
                 <input type="submit" class="quizSubmit" value="Submit"></input>
@@ -50,13 +50,16 @@ $('#questionNumDisplay').text(10)
 
 console.log('There are '+ Quiz.length + ' questions in this quiz.');
 console.log('Key: '+ Quiz[currentQuestion].question + ' '+ Quiz[currentQuestion].answer);
-console.log('The answer to question two is: '+Quiz[1].answer);
+
 
 
 
 function displayQuestions() {
 	$('#quizPage').html(callQuestions());
 }
+
+
+//https://docs.google.com/document/d/1Yy6bP48m6s4aIcoZcyQwp5cVvM9s3Q9AKIcWVsUnM9U/edit
 
  function selectAnswerDisplay () {
    $('.quizQuestions').on('submit', function (event) {
@@ -68,6 +71,7 @@ function displayQuestions() {
     console.log('Key: '+ Quiz[currentQuestion].question + '    '+ Quiz[currentQuestion].answer);
     console.log('The answer selected is: ' + selectedAnswerDis);
     console.log('The correct answer is: ' + answer);
+    console.log('The answer to next question is: '+ Quiz[currentQuestion + 1].answer);
       if (answer === selectedAnswerDis) {
      
        determindedCorrect();
@@ -80,7 +84,7 @@ function displayNextQuestion() {
 	$('main').on('click', '#quizNext', function (event){
 	incrementQuestionNumber();
 	displayQuestions();
-	selectAnswerDisplay(); 
+	selectAnswerDisplay(); //was subbed for determineAnswer()*/
   
   });
 }
@@ -111,10 +115,10 @@ function determindedCorrect() {
                 Here's a resource to learn more about:
 
                 
-<a href = '${Quiz[currentQuestion].topic_url} '>${Quiz[currentQuestion].topic} </a>
+<a href = '${Quiz[currentQuestion].topic_url} '><p class="topic"> ${Quiz[currentQuestion].topic}</p> </a>
             </p>
 
-            <button id='quizNext'>Next</button>
+            <button id='quizNext'>Next ></button>
         </div>`
 		);
     
@@ -151,7 +155,9 @@ function displayResults () {
   ${percentageScore}
   
  right!</h2>
-            
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
 
             <button id='quizRestart'>Restart</button>
         </div>`)
@@ -182,6 +188,7 @@ function displayResults () {
 	
 }
 
+
 function restartQuiz() {
 	$('main').on('click', '#quizRestart', function (event) {
 		location.reload();
@@ -192,7 +199,7 @@ function restartQuiz() {
 function makeQuiz () {
 	startQuiz();
   callQuestions();
-
+//	displayQuestions(); //now within startQuiz
   selectAnswerDisplay(); 
   displayNextQuestion();
 	
