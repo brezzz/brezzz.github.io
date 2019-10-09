@@ -5,10 +5,11 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: Raleway;
   margin: 0;
   padding: 0;
-  background-color: rgb(66, 61, 61);
+  background-color: white;
+  
 }    
 
 .favicon img {
@@ -28,28 +29,31 @@ header {
   text-align: right;
   margin-top:0;
   top:0;
-  padding:30px;
-  /*padding-left:-60px; */
+  padding:15 0px;
+  
   background-color: dimgray;
+  height:150px;
+  width:100%;
 }
 
 header ul {
 text-align: right;
+
+font-size:20px;
 }
 
 header ul li {
   list-style: none;
   display: inline-block;
   text-align: right;
-  padding: 0 115px;
+  padding: 0 25px;
+  
   
 }
 main {
-  padding-left: 90px;
-  padding-right: 90px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  max-width: 1500px;
+
   }
 
 .start {
@@ -68,7 +72,7 @@ main {
 
 
 .navigation {
-  background-color: gray;
+  background-color:  black;
   color: white;
   text-align: right;
   padding:0;
@@ -80,8 +84,17 @@ main {
   display: inline-block;
   list-style: none;
   padding: 0 12px;
- /* vertical-align: center;*/
+ color:gray;
   }
+  
+
+  .navigation :hover{
+background-color: white;
+  }
+  .screens a {
+    color:black;
+  }
+
 
   .hamburger {
     color: gray;
@@ -106,11 +119,16 @@ main {
     padding: 20px 0;
     
 }
+.quizQuestions {
+  width:400px;
+}
+
 #question {
   color:#000000;
   font-size: 22px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 
 .answerContainer {
   display:block; 
@@ -126,22 +144,34 @@ main {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: 100%;
   }
 
+  label {
+    transition: all 0.3s ease-out;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+  }
+
+input {
+  transition: 0.2s all linear;
+}
 
 .answerContainer:hover {
   background-color: dimgray;
   color: white;
 }
 
-/* Hide the browser's default radio button*/
+/* overrides the default radio button*/
 .answerContainer input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 } 
 
-/* Create a custom radio button */
+/* custom radio button */
 .checkmark {
   position: absolute;
   top: 0;
@@ -152,37 +182,54 @@ main {
   border-radius: 50%;
 }
 
-/* On mouse-over, add a grey background color */
+/* turns radio button green on hover */
 .answerContainer:hover input ~ .checkmark {
   background-color: #96ac70;
+  
 }
 
-/* When the radio button is checked, add a blue background */
+/* When selected, adds a darker a green background */
 .answerContainer input:checked ~ .checkmark {
-  background-color: #54692f;
+background-color: #4d612a;
+
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
+
 .checkmark:after {
-  content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the indicator (dot/circle) when checked */
+/* shows the indicator when selected*/ 
 .answerContainer input:checked ~ .checkmark:after {
   display: block;
+  
+
 }
 
-/* Style the indicator (dot/circle)*/ 
-.answerContainer .checkmark:after {
- 	top: 9px;
-	left: 9px;
+/* indicator style*/ 
+ .answerContainer .checkmark:after {
+ 	 top: 5px;
+	left: 6px;
 	width: 8px;
 	height: 8px;
-	border-radius: 50%;
-	background:green;
-}  
+	
+  
+
+ /*  "\f0d6"for dollar note. \f155 for dollar sign*/
+ content: "\f155";
+  font-family: 'FontAwesome'; 
+  /* on mobile add focus that confirms a selected answer */
+} 
+
+/* 
+This was supposed to change the type from radio to a checkbox
+input[type="radio"] {
+  -webkit-appearance:checkbox; 
+  -moz-appearance:checkbox;    
+  -ms-appearance:checkbox;    
+} */
+
 
 fieldset {
   border: none
@@ -292,12 +339,13 @@ color:darkolivegreen;
      color:dimgrey; 
      font-size: 0px;
      
+     
   }
 }
 /* alignment of .start class to horizontally stack.*/
 @media screen and (min-width: 800px) {
   main {
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -321,9 +369,9 @@ color:darkolivegreen;
     }
 
 .favicon {
-      
-padding-left: 150px;
-padding-right:160px;
+      right:10px;
+/* padding-left: 150px;
+padding-right:160px; */
     }
 
   h1{
