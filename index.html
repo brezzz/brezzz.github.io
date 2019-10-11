@@ -40,16 +40,23 @@
 
             <div class="responsive-menu">
                 <ul>
-                    <li><a href='#' target="_blank">Home</a></li>
-                    <li><a href='#topic_url' target="_blank">Hint</a></li>
-                    <li><a href='#' target="_blank">Resources</a></li>
+                    <li><a title="This refreshes the page and restarts the quiz." href="." >Home</a></li>
+                    <li><a title="placeholder text" href='#topic_url' target="_blank">Hint</a></li>
+                    <li><a title="placeholder text" href='#' target="_blank">Resources</a></li>
                 </ul>
             </div>
         </div>
         <ul class="screens">
-            <li><a href='https://financial-literacy-risk-quiz-wireframe-start--brianmcfarlane.repl.co/' target="_blank">Home</a></li>
-            <li><a href='https://financial-literacy-risk-quiz-wireframe--brianmcfarlane.repl.co/' target="_blank">Hint</a></li>
-            <li><a href='https://financial-literacy-risk-quiz-wireframe-feedback--brianmcfarlane.repl.co/' target="_blank">Resources</a></li>
+            <li><a 
+            title="This refreshes the page and restarts the quiz."
+            href=".">Home</a></li>
+<!-- have Hint include javascript variable for hints for every question. -->
+            <li id="Hint"><a title="The quiz hasn't started yet. :)"
+            href='#' target="_blank">Hint</a></li>
+            
+            <li><a title="Coming Soon"
+              >Resources</a></li> 
+  
         </ul>
     </nav>
 
@@ -69,6 +76,8 @@
         </div>
 
         <div id='quizPage'>
+
+          <h2>This is where the quiz goes.</h2>
         </div>
 
     </main>
