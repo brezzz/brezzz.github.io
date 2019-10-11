@@ -6,48 +6,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/WaAKdA2.png" alt="dollar note favicon" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet" />
+
 </head>
 
 <body>
     <header>
-        <a href='https://www.investopedia.com/'> 
-        <div class="favicon">
-            <img src="https://i.imgur.com/hykEXLd.png" alt="dollar note favicon" />
-        </a></div>
-        <ul>
-            <li>Question <span id = 'questionNumDisplay'>0</span> out of 10</li>
-            <li>Score: <span id = 'scoreDisplay'>0</span> </li>
-        </ul>
+        <div class="banner">
+
+            <div class="note_icon">
+                <a href='https://www.investopedia.com/'>
+                    <img src="https://i.imgur.com/hykEXLd.png" alt="dollar notes icon" />
+                </a>
+            </div>
+            <span class="score_keep">
+                <ul>
+                    <li>Question <span id='questionNumDisplay'>0</span> out of 10</li>
+                    <li>Score: <span id='scoreDisplay'>0</span> </li>
+                </ul>
+            </span>
+        </div>
     </header>
     <nav class="navigation">
-        <div class="hamburger">&#9776;</div>
+        <div class="mobile-nav">
+            <div class="hamburger">
+
+                &#9776;
+            </div>
+
+            <div class="responsive-menu">
+                <ul>
+                    <li><a href='#' target="_blank">Home</a></li>
+                    <li><a href='#topic_url' target="_blank">Hint</a></li>
+                    <li><a href='#' target="_blank">Resources</a></li>
+                </ul>
+            </div>
+        </div>
         <ul class="screens">
-          <li><a href='https://financial-literacy-risk-quiz-wireframe-start--brianmcfarlane.repl.co/'>Home</a></li>
-            <li><a href='https://financial-literacy-risk-quiz-wireframe--brianmcfarlane.repl.co/'>Quiz page</a></li>
-            <li><a href='https://financial-literacy-risk-quiz-wireframe-feedback--brianmcfarlane.repl.co/'>Feedback Screens</a></li>
-            <li><a href='https://wireframe-feedback-endpage--brianmcfarlane.repl.co/'>End Screen</a></li>
+            <li><a href='https://financial-literacy-risk-quiz-wireframe-start--brianmcfarlane.repl.co/' target="_blank">Home</a></li>
+            <li><a href='https://financial-literacy-risk-quiz-wireframe--brianmcfarlane.repl.co/' target="_blank">Hint</a></li>
+            <li><a href='https://financial-literacy-risk-quiz-wireframe-feedback--brianmcfarlane.repl.co/' target="_blank">Resources</a></li>
         </ul>
     </nav>
-    
-    <main role="main">
+
+    <main>
 
         <div class="start">
             <div class="logo"><img src="https://i.imgur.com/3oVTnpp.png" alt="pennybags_welcome" />
             </div>
             <h2>A quiz on financial markets, risks, & debt </h2>
             <p>
-               Please begin this very boring quiz
+                Please begin this very boring quiz
             </p>
 
-            <button id='quizStart'>Start</button>
+            <div class="btn-container">
+                <button id='quizStart'>Start</button>
+            </div>
         </div>
 
         <div id='quizPage'>
         </div>
-          
+
     </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <script src="questions.js"></script> <script src="script.js"></script>
-  </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+
 </html>
