@@ -12,29 +12,58 @@ body {
   
 }    
 
-.favicon img {
+.note_icon img {
   border-radius: 360px;
   width:56px;
-  height:51px ;
+  height:51px;
 }
 
-.favicon > img {
+.note_icon > img {
   width: 50px;
   }
-.screens > .favicon {
+.screens > .note_icon {
     flex-grow: 0;
   }
 
+
+
+
+
 header {
+  text-align: center;
+  margin-top:0;
+  top:0;
+ 
+  padding:20px 0;
+  color:white;
+  background-color: dimgray;
+  width:100%;
+
+}
+main {
+  padding-left: 50px;
+  padding-right: 50px;
+  max-width: 1500px;
+  max-height: 1000px;
+ margin: 0 auto;
+  
+
+  }
+
+.banner {
+  display: inline-block;
+} 
+
+/* header {
   text-align: right;
   margin-top:0;
   top:0;
   padding:15 0px;
-  
+  color:white;
   background-color: dimgray;
   height:150px;
   width:100%;
-}
+} */
 
 header ul {
 text-align: right;
@@ -44,17 +73,39 @@ font-size:20px;
 
 header ul li {
   list-style: none;
-  display: inline-block;
-  text-align: right;
-  padding: 0 25px;
-  
-  
-}
-main {
-  margin: 0 auto;
-  max-width: 1500px;
+ display: inline-block;
+  text-align:center;
+  padding: 0 8px;
+  font-family: 'Lobster', cursive;
 
-  }
+}
+
+.responsive-menu{
+ display: none;
+}
+
+.responsive-menu ul li{
+ list-style:none;
+ background-color:black;
+ color: white;
+ width:60px;
+ font-family: 'Lobster', cursive;
+ float:right;
+}
+
+.responsive-menu ul li a{
+ color:white;
+}
+
+.responsive-menu ul li a:hover{
+ list-style:none;
+ background-color:white;
+ color: green;
+}
+
+.expand {
+ display: block !important;
+ }
 
 .start {
   border: 1px solid #DDDDDD;
@@ -85,27 +136,34 @@ main {
   list-style: none;
   padding: 0 12px;
  color:gray;
+ font-family: 'Lobster', cursive;
+ text-decoration: none;
+
   }
   
 
-  .navigation :hover{
-background-color: white;
-  }
   .screens a {
-    color:black;
+    color:white;
+    text-decoration: none;
   }
 
 
   .hamburger {
     color: gray;
   }
+.responsive_menu {
+  display:none;
+  text-align: right;
+}
 
 
 
  /*Quiz page questions*/
 
  #quizPage{
-   padding: 0 20px 40px 0;
+   width:100%;
+   margin:10px;
+   padding:5px;
  } 
 
 
@@ -119,8 +177,13 @@ background-color: white;
     padding: 20px 0;
     
 }
-.quizQuestions {
-  width:400px;
+.quizQuestions{
+  
+  width:300px;
+  
+}
+.feedback {
+  /* height:200px; */
 }
 
 #question {
@@ -164,14 +227,14 @@ input {
   color: white;
 }
 
-/* overrides the default radio button*/
+/* Hide the browser's default radio button*/
 .answerContainer input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 } 
 
-/* custom radio button */
+/* Create a custom radio button */
 .checkmark {
   position: absolute;
   top: 0;
@@ -182,32 +245,34 @@ input {
   border-radius: 50%;
 }
 
-/* turns radio button green on hover */
+/* On mouse-over, add a grey background color */
 .answerContainer:hover input ~ .checkmark {
   background-color: #96ac70;
+  transition: 0.5s all linear;
   
 }
 
-/* When selected, adds a darker a green background */
+/* When the radio button is checked, add a blue background */
 .answerContainer input:checked ~ .checkmark {
 background-color: #4d612a;
+transition: 1s all linear;
 
 }
 
-
+/* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
   position: absolute;
   display: none;
 }
 
-/* shows the indicator when selected*/ 
+/* Show the indicator (dot/circle) when checked*/ 
 .answerContainer input:checked ~ .checkmark:after {
   display: block;
   
 
 }
 
-/* indicator style*/ 
+/* Style the indicator (dot/circle)*/ 
  .answerContainer .checkmark:after {
  	 top: 5px;
 	left: 6px;
@@ -222,13 +287,11 @@ background-color: #4d612a;
   /* on mobile add focus that confirms a selected answer */
 } 
 
-/* 
-This was supposed to change the type from radio to a checkbox
 input[type="radio"] {
   -webkit-appearance:checkbox; 
   -moz-appearance:checkbox;    
   -ms-appearance:checkbox;    
-} */
+}
 
 
 fieldset {
@@ -299,25 +362,40 @@ border-radius: 50%; }
 .feedback{
   margin-top: 10px;
     background-color: rgba(211, 211, 211, 0.747);
-    img-align:middle;
+    
     padding: 25px;
 }
+.feedback img{
+ height:267px;
+    width:223px;
+}
+
 #quizNext{
   float:right;
   background-color: dimgray;
 }
 
 
-.topic {
+.topic a {
   font-style: oblique;
   font-size: 25px;
+  color:#000000;
+  text-decoration: none;
+  
 }
-a .topic:hover {
+ .topic a:hover {
 color:darkolivegreen;
+font-family: 'Lobster', cursive;
+text-decoration: none;
 }
 
 
-/*Media queries for screen changes.*/
+/*Media queries for screen changes.
+Phone:435px
+Tablet:545px
+Desktop/Laptop:1000px
+
+*/
 
 
  @media screen and (min-width: 800px) {
@@ -332,12 +410,11 @@ color:darkolivegreen;
  }
 }
 
-/*color and alignment changes with under  Npx. color is redundant*/
+
 
 @media screen and (max-width: 800px) {
   .screens li {
-     color:dimgrey; 
-     font-size: 0px;
+    font-size: 0px;
      
      
   }
@@ -358,7 +435,7 @@ color:darkolivegreen;
 } 
 
 
-/* .favicon appears next to the Score  @ tablet and desktop */
+/* .note_icon appears next to the Score  @ tablet and desktop */
 
 @media screen and (min-width: 800px) {
   header {
@@ -368,18 +445,86 @@ color:darkolivegreen;
      
     }
 
-.favicon {
-      right:10px;
-/* padding-left: 150px;
-padding-right:160px; */
+    /* header grows as pixel width passes 800px */
+header ul {
+text-align: right;
+
+font-size:45px;
+}
+
+.navigation {
+  text-align: center;
+  padding:0;
+  height:60px;
+  }
+  
+.screens li {
+ font-size: 32px;
+  }
+  
+
+
+    main div {
+      margin: 0 auto;
     }
 
-  h1{
-    }
+.note_icon img {
+  float:left;
+  width:112px;
+  height:102px;
+  position:absolute;
+    left:10px;
+    top:10px;
+    margin: 20px 15px 15px 0px;
+
 }
 
 
-/*Only for assignment:*/
+   
+
+.score_keep {
+color:#4d612a;
+ text-align:right; 
+ font-size: 70px;
+ float: right;
+ right:10px;
+
+ display: inline-block;
+    font-size: 18px;
+    
+    vertical-align:bottom;
+    line-height:normal;   
+  }
+
+  .banner {
+    display: flex;
+   align-items:center;
+  }
+
+.quizForm {
+  padding-top: 50px;
+  
+ margin:0 auto;
+ display: block;
+}
+
+ .quizQuestions{
+  margin:0 auto;
+  width:500px;
+  
+}
+header ul {
+  float: left;
+}
+
+header ul il a {}
+
+
+
+ }
+
+
+
 
 a {
   text-decoration:none;
@@ -388,8 +533,4 @@ a {
 
 a:hover {
 text-decoration-line: underline;
-}
-img {
-  height:200px;
-  width: 150px;
 }
