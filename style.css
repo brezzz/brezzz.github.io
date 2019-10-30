@@ -1,5 +1,3 @@
-/*html {background: url(monopoly board?); */
-
 * {
   box-sizing: border-box;
 }
@@ -11,6 +9,8 @@ body {
   background-color: white;
   
 }    
+
+.hidden {display: none;}
 
 .note_icon img {
   border-radius: 360px;
@@ -26,9 +26,6 @@ body {
   }
 
 
-
-
-
 header {
   text-align: center;
   margin-top:0;
@@ -38,32 +35,22 @@ header {
   color:white;
   background-color: dimgray;
   width:100%;
-
+height: 100px;
 }
 main {
   padding-left: 50px;
   padding-right: 50px;
   max-width: 1500px;
-  max-height: 1000px;
+  max-height: 1600px;
  margin: 0 auto;
-  
-
+font-size: 12px
   }
 
 .banner {
   display: inline-block;
 } 
 
-/* header {
-  text-align: right;
-  margin-top:0;
-  top:0;
-  padding:15 0px;
-  color:white;
-  background-color: dimgray;
-  height:150px;
-  width:100%;
-} */
+
 
 header ul {
 text-align: right;
@@ -128,7 +115,6 @@ header ul li {
   text-align: right;
   padding:0;
   height:25px;
- /* vertical-align: center;*/
   }
   
 .screens li {
@@ -182,9 +168,6 @@ header ul li {
   width:300px;
   
 }
-.feedback {
-  /* height:200px; */
-}
 
 #question {
   color:#000000;
@@ -208,6 +191,7 @@ header ul li {
   -ms-user-select: none;
   user-select: none;
   width: 100%;
+  
   }
 
   label {
@@ -226,6 +210,9 @@ input {
   background-color: dimgray;
   color: white;
 }
+
+
+
 
 /* Hide the browser's default radio button*/
 .answerContainer input {
@@ -268,9 +255,7 @@ transition: 1s all linear;
 /* Show the indicator (dot/circle) when checked*/ 
 .answerContainer input:checked ~ .checkmark:after {
   display: block;
-  
-
-}
+  }
 
 /* Style the indicator (dot/circle)*/ 
  .answerContainer .checkmark:after {
@@ -309,14 +294,13 @@ outline:none;
 font-size: 25px;
 height: 50px;
 width:150px;
-/*float:right;*/
+
 }
  button,.quizSubmit {
 outline:gray 2px;
 border-radius: 2px;
 height: 50px;
 width:150px;
-border: none;
 display: inline-block;
 padding: 8px 16px;
 vertical-align: middle;
@@ -365,10 +349,14 @@ border-radius: 50%; }
     
     padding: 25px;
 }
-.feedback img{
- height:267px;
-    width:223px;
+
+/* font and img size smaller for mobile */
+.start img , .feedback img{
+ height:167px;
+    width:123px;
 }
+
+
 
 #quizNext{
   float:right;
@@ -383,12 +371,66 @@ border-radius: 50%; }
   text-decoration: none;
   
 }
- .topic a:hover {
+ #correctAnswer, .topic a:hover {
 color:darkolivegreen;
 font-family: 'Lobster', cursive;
 text-decoration: none;
 }
 
+
+/* mobile resource menu */
+
+.resources-menu {
+z-index: 1;
+width: 100%;
+height:100%;
+background-color:black;
+display: inline-block;
+}
+
+.resources-menu ul {
+list-style:none;
+
+padding:50px;
+text-align: center;
+font-family: 'Lobster', cursive;
+display: relative;
+z-index: 1;
+}
+
+.resources-menu a {
+color:white;
+text-decoration:none;
+
+}
+
+
+.resources-menu  ul li {
+padding:20px;
+font-size:20px}
+
+.resources-menu {
+position:absolute;
+margin:0 auto;
+text-align: center;
+width:100%;
+height:100%;
+display: none;
+}
+
+.resources-menu .menu-close {
+    float: right;
+    margin: 36px 40px 145px 0;
+}
+
+ .menu-close  {
+font-size:20px;
+text-decoration:none;
+}
+
+a .menu-close:hover{
+text-decoration:none;
+}
 
 /*Media queries for screen changes.
 Phone:435px
@@ -426,12 +468,12 @@ Desktop/Laptop:1000px
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    
+   background: url("https://i.pinimg.com/originals/5f/26/39/5f2639d8345e3912e9676260b4c0c676.png");
+
+  
    }
 
-   /* .start {
-     height:275px;
-    width: 206px;
-   } */
 } 
 
 
@@ -442,20 +484,25 @@ Desktop/Laptop:1000px
      display: flex;
      flex-direction: row;
      align-content: center;
+     justify-content:space-between;
+     padding-left: 10px;
+     padding-right: 10px;
      
     }
 
     /* header grows as pixel width passes 800px */
-header ul {
+header ul li {
 text-align: right;
 
 font-size:45px;
+
 }
 
 .navigation {
   text-align: center;
   padding:0;
   height:60px;
+  
   }
   
 .screens li {
@@ -464,15 +511,12 @@ font-size:45px;
   
 
 
-    main div {
-      margin: 0 auto;
-    }
 
 .note_icon img {
   float:left;
   width:112px;
   height:102px;
-  position:absolute;
+
     left:10px;
     top:10px;
     margin: 20px 15px 15px 0px;
@@ -483,17 +527,17 @@ font-size:45px;
    
 
 .score_keep {
-color:#4d612a;
  text-align:right; 
  font-size: 70px;
- float: right;
+ align-content: flex-end;
  right:10px;
 
  display: inline-block;
-    font-size: 18px;
+
     
     vertical-align:bottom;
-    line-height:normal;   
+    line-height:normal; 
+    position:absolute;
   }
 
   .banner {
@@ -501,12 +545,46 @@ color:#4d612a;
    align-items:center;
   }
 
+/*When .responsive_menu is toggled and the width of window was increased, it stays visible - the fix:*/
+
+/* .expand {
+  font-size: 0px;
+} */
+
+
 .quizForm {
   padding-top: 50px;
   
- margin:0 auto;
+  margin:0 auto;
  display: block;
+ background-color: black;
+  width: 350px;
+height: 357px;
+overflow:word-break; 
 }
+
+
+
+.quizForm h3 {
+  color:white;
+  font-family: 'Fira Sans', sans-serif;
+
+}
+
+main {
+  font-size: 20px;
+}
+
+.start img {
+height:300px;
+    width:250px;
+}
+
+ .feedback img{
+ height:267px;
+    width:223px;
+}
+
 
  .quizQuestions{
   margin:0 auto;
@@ -517,20 +595,7 @@ header ul {
   float: left;
 }
 
-header ul il a {}
 
 
 
  }
-
-
-
-
-a {
-  text-decoration:none;
-  color: black;
-}
-
-a:hover {
-text-decoration-line: underline;
-}
