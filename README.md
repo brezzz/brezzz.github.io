@@ -1,3 +1,3 @@
 # brezzz.github.io/
 
-To host future projects on live page.
+To host future projects on a live page.
