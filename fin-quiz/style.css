@@ -545,10 +545,9 @@ font-size:45px;
   }
 
 /*When .responsive_menu is toggled and the width of window was increased, it stays visible - the fix:*/
-
-/* .expand {
+ .expand {
   font-size: 0px;
-} */
+} 
 
 
 .quizForm {
